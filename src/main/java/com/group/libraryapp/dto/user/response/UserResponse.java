@@ -1,6 +1,7 @@
 package com.group.libraryapp.dto.user.response;
 
 import com.group.libraryapp.domain.user.JavaUser;
+import com.group.libraryapp.domain.user.User;
 
 public class UserResponse {
 
@@ -8,10 +9,10 @@ public class UserResponse {
   private final String name;
   private final Integer age;
 
-  public UserResponse(JavaUser javaUser) {
-    this.id = javaUser.getId();
-    this.name = javaUser.getName();
-    this.age = javaUser.getAge();
+  public UserResponse(User user) {
+    this.id = user.getId();
+    this.name = user.getName();
+    this.age = user.getAge();
   }
 
   public long getId() {
