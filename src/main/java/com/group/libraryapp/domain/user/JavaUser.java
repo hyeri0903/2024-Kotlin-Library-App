@@ -1,6 +1,8 @@
 package com.group.libraryapp.domain.user;
 
 import com.group.libraryapp.domain.book.Book;
+import com.group.libraryapp.domain.book.JavaBook;
+import com.group.libraryapp.domain.user.loanhistory.JavaUserLoanHistory;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ public class JavaUser {
   private Integer age;
 
   @OneToMany(mappedBy = "javaUser", cascade = CascadeType.ALL, orphanRemoval = true)
-  private final List<UserLoanHistory> userLoanHistories = new ArrayList<>();
+  private final List<JavaUserLoanHistory> userLoanHistories = new ArrayList<>();
 
   public JavaUser() {
 
@@ -39,12 +41,12 @@ public class JavaUser {
     this.name = name;
   }
 
-  public void loanBook(Book book) {
-    this.userLoanHistories.add(new UserLoanHistory(this, book.getName(), false, null));
+  public void loanBook(JavaBook book) {
+    this.userLoanHistories.add(new JavaUserLoanHistory(this, book.getName(), false));
   }
 
   public void returnBook(String bookName) {
-    UserLoanHistory targetHistory = this.userLoanHistories.stream()
+	  JavaUserLoanHistory targetHistory = this.userLoanHistories.stream()
         .filter(history -> history.getBookName().equals(bookName))
         .findFirst()
         .orElseThrow();
