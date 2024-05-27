@@ -1,10 +1,8 @@
 package com.group.libraryapp.service.book;
 
-import com.group.libraryapp.domain.book.Book;
 import com.group.libraryapp.domain.book.JavaBook;
 import com.group.libraryapp.domain.book.JavaBookRepository;
 import com.group.libraryapp.domain.user.JavaUser;
-import com.group.libraryapp.domain.user.User;
 import com.group.libraryapp.domain.user.JavaUserRepository;
 import com.group.libraryapp.domain.user.loanhistory.JavaUserLoanHistoryRepository;
 import com.group.libraryapp.dto.book.request.BookLoanRequest;
@@ -14,13 +12,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class BookService {
+public class JavaBookService {
 
   private final JavaBookRepository javaBookRepository;
   private final JavaUserRepository javaUserRepository;
   private final JavaUserLoanHistoryRepository javaUserLoanHistoryRepository;
 
-  public BookService(
+  public JavaBookService(
       JavaBookRepository javaBookRepository,
       JavaUserRepository javaUserRepository,
       JavaUserLoanHistoryRepository javaUserLoanHistoryRepository
