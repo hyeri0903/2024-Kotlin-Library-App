@@ -1,11 +1,6 @@
-package com.group.libraryapp.dto.book.request;
+package com.group.libraryapp.dto.book
 
-public class BookRequest {
-
-  private String name;
-
-  public String getName() {
-    return name;
-  }
-
+class BookRequest {
+    @JvmField
+    val name: String? = null
 }

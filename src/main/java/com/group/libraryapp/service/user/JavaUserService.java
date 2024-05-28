@@ -2,9 +2,9 @@ package com.group.libraryapp.service.user;
 
 import com.group.libraryapp.domain.user.JavaUser;
 import com.group.libraryapp.domain.user.JavaUserRepository;
-import com.group.libraryapp.dto.user.request.UserCreateRequest;
-import com.group.libraryapp.dto.user.request.UserUpdateRequest;
-import com.group.libraryapp.dto.user.response.UserResponse;
+import com.group.libraryapp.dto.user.UserCreateRequest;
+import com.group.libraryapp.dto.user.UserUpdateRequest;
+import com.group.libraryapp.dto.user.UserResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

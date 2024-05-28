@@ -4,9 +4,10 @@ import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository
-import com.group.libraryapp.dto.book.request.BookLoanRequest
-import com.group.libraryapp.dto.book.request.BookRequest
-import com.group.libraryapp.dto.book.request.BookReturnRequest
+import com.group.libraryapp.dto.book.BookLoanRequest
+import com.group.libraryapp.dto.book.BookRequest
+import com.group.libraryapp.dto.book.BookReturnRequest
+import com.group.libraryapp.dto.user.UserResponse
 import com.group.libraryapp.util.fail
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -34,7 +35,7 @@ class BookService(
 
     @Transactional
     fun returnBook(request: BookReturnRequest) {
-        val user = userRepository.findByName(request.userName) ?: fail()
-        user.returnBook(request.bookName)
+        val user = request.userName?.let { userRepository.findByName(it) } ?: fail()
+        user.returnBook(UserResponse::of.toString())
     }
 }
