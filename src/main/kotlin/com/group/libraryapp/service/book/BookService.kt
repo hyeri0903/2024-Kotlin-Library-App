@@ -21,7 +21,7 @@ class BookService(
 
     @Transactional
     fun saveBook(request: BookRequest) {
-        bookRepository.save(Book(request.name))
+        bookRepository.save(request.name ?: "")
     }
 
     @Transactional

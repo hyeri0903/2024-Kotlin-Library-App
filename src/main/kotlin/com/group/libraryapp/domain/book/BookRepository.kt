@@ -5,4 +5,5 @@ import java.util.*
 
 interface BookRepository : JpaRepository<Book, Long> {
     fun findByName(bookName: String): Book?
+    fun save(bookName: String)
 }

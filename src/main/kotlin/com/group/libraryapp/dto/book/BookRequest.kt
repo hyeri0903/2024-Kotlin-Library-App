@@ -1,6 +1,9 @@
 package com.group.libraryapp.dto.book
 
-class BookRequest {
-    @JvmField
-    val name: String? = null
+data class BookRequest(
+    val name: String?
+) {
+    init {
+        val name = null
+    }
 }
