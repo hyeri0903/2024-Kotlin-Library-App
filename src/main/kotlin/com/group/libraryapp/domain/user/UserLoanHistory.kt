@@ -12,13 +12,20 @@ class UserLoanHistory(
     @Enumerated(EnumType.STRING)
     var status: UserLoanStatus = UserLoanStatus.LOANED,
 
-    var isReturn: Boolean = false,
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
 
 ) {
+
+    val isReturn: Boolean
+        get() = this.status == UserLoanStatus.RETURNED
+
+
+    fun doReturn() {
+        this.status = UserLoanStatus.RETURNED
+    }
+
 
     companion object {
         fun fixture(
@@ -34,7 +41,4 @@ class UserLoanHistory(
         }
     }
 
-    fun doReturn() {
-        this.isReturn = true
-    }
 }
