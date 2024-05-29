@@ -9,6 +9,9 @@ class UserLoanHistory(
 
     val bookName: String,
 
+    @Enumerated(EnumType.STRING)
+    var status: UserLoanStatus = UserLoanStatus.LOANED,
+
     var isReturn: Boolean = false,
 
     @Id
@@ -16,6 +19,20 @@ class UserLoanHistory(
     val id: Long? = null
 
 ) {
+
+    companion object {
+        fun fixture(
+                user: User,
+                bookName: String = "이상한 나라의 앨리스",
+                status: UserLoanStatus = UserLoanStatus.LOANED,
+        ): UserLoanHistory {
+            return UserLoanHistory(
+                    user = user,
+                    bookName = bookName,
+                    status = status,
+            )
+        }
+    }
 
     fun doReturn() {
         this.isReturn = true

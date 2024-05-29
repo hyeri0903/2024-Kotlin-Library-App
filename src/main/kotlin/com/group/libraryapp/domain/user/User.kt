@@ -7,6 +7,9 @@ import javax.persistence.*
 class User(
     var name: String,
 
+    @Enumerated(EnumType.STRING)
+    val status: UserStatus,
+
     val age: Int?,
 
     @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], orphanRemoval = true)

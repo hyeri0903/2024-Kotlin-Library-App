@@ -2,6 +2,7 @@ package com.group.libraryapp.service.user
 
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
+import com.group.libraryapp.domain.user.UserStatus
 import com.group.libraryapp.dto.user.UserCreateRequest
 import com.group.libraryapp.dto.user.UserUpdateRequest
 import com.group.libraryapp.dto.user.UserResponse
@@ -17,7 +18,7 @@ class UserService(
 
     @Transactional
     fun saveUser(request: UserCreateRequest) {
-        userRepository.save(User(request.name, request.age))
+        userRepository.save(User(request.name, UserStatus.ACTIVE, request.age))
     }
 
     @Transactional(readOnly = true)
