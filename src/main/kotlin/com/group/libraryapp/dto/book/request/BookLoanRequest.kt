@@ -1,4 +1,4 @@
-package com.group.libraryapp.dto.book
+package com.group.libraryapp.dto.book.request
 
 data class BookLoanRequest(
     val userName: String,
