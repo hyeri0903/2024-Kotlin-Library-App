@@ -5,9 +5,9 @@
 // import com.group.libraryapp.domain.user.JavaUser;
 // import com.group.libraryapp.domain.user.JavaUserRepository;
 // import com.group.libraryapp.domain.user.loanhistory.JavaUserLoanHistoryRepository;
-// import com.group.libraryapp.dto.book.BookLoanRequest;
-// import com.group.libraryapp.dto.book.BookRequest;
-// import com.group.libraryapp.dto.book.BookReturnRequest;
+// import com.group.libraryapp.dto.book.request.BookLoanRequest;
+// import com.group.libraryapp.dto.book.request.BookRequest;
+// import com.group.libraryapp.dto.book.request.BookReturnRequest;
 // import org.springframework.stereotype.Service;
 // import org.springframework.transaction.annotation.Transactional;
 //
