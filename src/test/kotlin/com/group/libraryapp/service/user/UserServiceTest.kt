@@ -1,6 +1,7 @@
 package com.group.libraryapp.service.user
 
 import com.group.libraryapp.domain.user.*
+import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryQuerydslRepository
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository
 import com.group.libraryapp.dto.user.UserCreateRequest
 import com.group.libraryapp.dto.user.UserUpdateRequest
@@ -16,7 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest
 class UserServiceTest @Autowired constructor(
         private val userRepository: UserRepository,
         private val userService: UserService,
-        private val userLoanHistoryRepository: UserLoanHistoryRepository,
+        private val userLoanHistoryRepository: UserLoanHistoryRepository
 ) {
 
     @AfterEach

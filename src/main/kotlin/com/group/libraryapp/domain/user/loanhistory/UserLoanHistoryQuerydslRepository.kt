@@ -3,7 +3,6 @@ package com.group.libraryapp.domain.user.loanhistory
 import com.group.libraryapp.domain.user.QUserLoanHistory.userLoanHistory
 import com.group.libraryapp.domain.user.UserLoanHistory
 import com.group.libraryapp.domain.user.UserLoanStatus
-import com.querydsl.jpa.impl.JPAQuery
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.stereotype.Component
 
@@ -32,7 +31,7 @@ class UserLoanHistoryQuerydslRepository(
                 .fetchOne()
     }
 
-    fun conut(status: UserLoanStatus): Long {
+    fun count(status: UserLoanStatus): Long {
         return queryFactory.select(userLoanHistory.count())
                 .from(userLoanHistory)
                 .where(
